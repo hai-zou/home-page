@@ -1,0 +1,10 @@
+#card {
+  display: inline-block;
+  padding: 16px;
+  max-width: 460px;
+  border-radius: 6px;
+  background-color: #F3F3F3;
+  border: 5px solid #fff;
+  transform: scale(1);
+  transition: transform .3s;
+}

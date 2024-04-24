@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 0 30px;
+
+  & .from {
+    text-align: right;
+  }
+}
+
+.left-quote {
+  transform: rotate(180deg);
+}
+
+.right-quote-wrap {
+  text-align: right;
+}
