@@ -1,6 +1,8 @@
 .main {
-  padding: 6rem;
-  min-height: 100vh;
+  height: 100%;
+  padding: 6rem 0;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .card {

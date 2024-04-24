@@ -21,7 +21,7 @@ const OneWord = (props: OneWordProps) => {
           {text}
         </div>
         <div className={style['from']}>
-          -「 {from} 」
+          —「 {from} 」
         </div>
       </div>
       <div className={style['right-quote-wrap']} >
