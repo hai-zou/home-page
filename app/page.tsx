@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import OneWord from '@/components/one-word';
+import UserInfo from "@/components/user-info";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
@@ -31,18 +32,8 @@ export default function Home() {
       <div key='OneWord' className='grid-item' style={{ width: '430px' }}>
         <OneWord loadComplete={() => oneWordLoaded()} />
       </div>,
-      <div key='Learn' className='grid-item' style={{ width: '320px' }}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      <div key='UserInfo' className='grid-item' style={{ width: '320px', height: '320px' }}>
+        <UserInfo />
       </div>,
       <div key='Templates' className='grid-item' style={{ width: '210px' }}>
         <a
