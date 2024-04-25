@@ -1,49 +1,26 @@
 "use client"
 
-import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import OneWord from '@/components/one-word';
-import MasonryLayout from '@/components/masonry-layout';
+import dynamic from "next/dynamic";
+import { useState } from "react";
 
-interface OneWordData {
-  hitokoto: string;
-  from: string;
-}
+const PackeryLayout = dynamic(() => import('@/components/packery'), { ssr: false });
 
 export default function Home() {
 
-  const [oneWordData, setOneWordData] = useState<OneWordData>({
-    hitokoto: '',
-    from: '',
-  });
-  const [isLoadComplete, setIsLoadComplete] = useState(false);
-
-  const getOneWord = () => {
-    fetch('https://v1.hitokoto.cn', { mode: 'cors' })
-      .then(response => response.json())
-      .then(data => {
-        setOneWordData(data);
-      })
-      .catch(console.error)
-      .finally(() => {
-        setIsLoadComplete(true);
-      });
+  const [isReset, setIsReset] = useState(false);
+  const oneWordLoaded = () => {
+    setIsReset(true);
   };
-
-  useEffect(() => {
-    getOneWord();
-  }, []);
 
   return (
     <main className={styles.main}>
-      {isLoadComplete ? <MasonryLayout>
-        <div className='grid-item'>
-          <OneWord
-            text={oneWordData.hitokoto}
-            from={oneWordData.from}
-          />
+      <PackeryLayout isReset={isReset}>
+        <div className='grid-item' style={{ width: '410px' }}>
+          <OneWord loadComplete={() => oneWordLoaded()} />
         </div>
-        <div className='grid-item'>
+        <div className='grid-item' style={{ width: '200px' }}>
           <a
             href="https://blog.luckyzh.cn"
             className={styles.card}
@@ -69,7 +46,7 @@ export default function Home() {
             <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
           </a>
         </div>
-        <div className='grid-item'>
+        <div className='grid-item' style={{ width: '200px' }}>
           <a
             href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -97,7 +74,7 @@ export default function Home() {
             </p>
           </a>
         </div>
-      </MasonryLayout> : null}
+      </PackeryLayout>
     </main>
   );
 }

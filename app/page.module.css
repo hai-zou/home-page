@@ -1,7 +1,8 @@
 .main {
   height: 100%;
   padding: 6rem 0;
-  width: 1000px;
+  width: 840px;
+  max-width: 80%;
   margin: 0 auto;
 }
 

@@ -1,0 +1,31 @@
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item {
+  min-width: 200px;
+  padding: 16px;
+  border-radius: 6px;
+  background-color: #F3F3F3;
+  border: 5px solid #fff;
+}
+
+.grid-item:hover {
+  border-color: hsla(0, 0%, 100%, 0.5);
+  cursor: move;
+}
+
+.grid-item.is-dragging,
+.grid-item.is-positioning-post-drag {
+  background: #C90;
+  z-index: 2;
+}
+
+.packery-drop-placeholder {
+  outline: 3px dashed hsla(0, 0%, 0%, 0.5);
+  outline-offset: -6px;
+  -webkit-transition: -webkit-transform 0.2s;
+          transition: transform 0.2s;
+}
