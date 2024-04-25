@@ -14,26 +14,26 @@ export default function Home() {
     setIsReset(true);
   };
 
+  const createGridItem = (num: number) => {
+    const list = Array.from({ length: num }, (_, index) => index);
+    return list.map((item) => (
+      <div
+        key={item}
+        className='grid-item'
+        style={{ width: '100px', height: '100px' }}
+      ></div>
+    ))
+  };
+
   return (
     <main className={styles.main}>
       <PackeryLayout isReset={isReset}>
-        <div className='grid-item' style={{ width: '410px' }}>
+        {createGridItem(15)}
+        <div className='grid-item' style={{ width: '430px' }}>
           <OneWord loadComplete={() => oneWordLoaded()} />
         </div>
-        <div className='grid-item' style={{ width: '200px' }}>
-          <a
-            href="https://blog.luckyzh.cn"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Blog <span>-&gt;</span>
-            </h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-        </div>
-        <div className='grid-item'>
+        {createGridItem(15)}
+        <div className='grid-item' style={{ width: '400px' }}>
           <a
             href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -46,7 +46,8 @@ export default function Home() {
             <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
           </a>
         </div>
-        <div className='grid-item' style={{ width: '200px' }}>
+        {createGridItem(15)}
+        <div className='grid-item' style={{ width: '210px' }}>
           <a
             href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -59,7 +60,8 @@ export default function Home() {
             <p>Explore starter templates for Next.js.</p>
           </a>
         </div>
-        <div className='grid-item'>
+        {createGridItem(15)}
+        <div className='grid-item' style={{ width: '300px' }}>
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -74,6 +76,7 @@ export default function Home() {
             </p>
           </a>
         </div>
+        {createGridItem(15)}
       </PackeryLayout>
     </main>
   );

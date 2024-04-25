@@ -17,7 +17,7 @@ const PackeryLayout = ({
     const packery = new Packery(packeryRef.current, {
       itemSelector: '.grid-item',
       gutter: 10,
-      columnWidth: 20,
+      columnWidth: 100,
     });
 
     packery.getItemElements().forEach((itemElem: HTMLElement) => {
