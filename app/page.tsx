@@ -33,7 +33,7 @@ export default function Home() {
           <OneWord loadComplete={() => oneWordLoaded()} />
         </div>
         {createGridItem(15)}
-        <div className='grid-item' style={{ width: '400px' }}>
+        <div className='grid-item' style={{ width: '320px' }}>
           <a
             href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -61,7 +61,7 @@ export default function Home() {
           </a>
         </div>
         {createGridItem(15)}
-        <div className='grid-item' style={{ width: '300px' }}>
+        <div className='grid-item' style={{ width: '320px' }}>
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
