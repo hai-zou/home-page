@@ -13,8 +13,8 @@
 }
 
 .grid-item:hover {
-  border-color: hsla(0, 0%, 100%, 0.5);
   cursor: move;
+  animation: shake 0.5s ease;
 }
 
 .grid-item.is-dragging,
@@ -27,5 +27,13 @@
   outline: 3px dashed hsla(0, 0%, 0%, 0.5);
   outline-offset: -6px;
   -webkit-transition: -webkit-transform 0.2s;
-          transition: transform 0.2s;
+  transition: transform 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-5deg); }
+  50% { transform: translateX(5px) rotate(5deg); }
+  75% { transform: translateX(-5px) rotate(-5deg); }
+  100% { transform: translateX(0); }
 }
