@@ -17,6 +17,7 @@ const UserInfo = () => {
         width={100}
         height={100}
         alt='avatar'
+        priority={true}
         className={styles.avatar}
       />
       <div className={styles.intro}>

@@ -1,19 +1,25 @@
 "use client"
 
+import { forwardRef, useRef } from "react";
 import RandomImg from "@/components/random-img";
 import styles from "./page.module.css";
 import OneWord from '@/components/one-word';
 import UserInfo from "@/components/user-info";
 import dynamic from "next/dynamic";
-import { useState } from "react";
 
 const PackeryLayout = dynamic(() => import('@/components/packery'), { ssr: false });
+const ForwardedRefPackery = forwardRef(function ForwardedRefPackery(props: { children: React.ReactNode; }, ref) {
+  return <PackeryLayout forwardedRef={ref}>{props.children}</PackeryLayout>
+});
 
 export default function Home() {
 
-  const [resetNum, setResetNum] = useState(0);
-  const oneWordLoaded = () => {
-    setResetNum(resetNum + 1);
+  const packeryLayoutRef = useRef<any>(null);
+  const resetPackeryLayout = () => {
+    if (packeryLayoutRef.current === null) {
+      return;
+    }
+    packeryLayoutRef.current.resetLayout();
   };
 
   const createGridItem = (num: number) => {
@@ -31,13 +37,13 @@ export default function Home() {
     const blockList = createGridItem(75);
     const customList = [
       <div key='OneWord' className='grid-item' style={{ width: '430px' }}>
-        <OneWord loadComplete={() => oneWordLoaded()} />
+        <OneWord loadComplete={() => resetPackeryLayout()} />
       </div>,
       <div key='UserInfo' className='grid-item' style={{ width: '320px', height: '320px' }}>
         <UserInfo />
       </div>,
       <div key='RandomImg' className='grid-item' style={{ width: '320px' }}>
-        <RandomImg loadComplete={() => oneWordLoaded()} />
+        <RandomImg loadComplete={() => resetPackeryLayout()} />
       </div>,
       <div key='Templates' className='grid-item' style={{ width: '210px' }}>
         <a
@@ -79,9 +85,9 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <PackeryLayout resetNum={resetNum}>
+      <ForwardedRefPackery ref={packeryLayoutRef}>
         {createAllGrid()}
-      </PackeryLayout>
+      </ForwardedRefPackery>
     </main>
   );
 }

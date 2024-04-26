@@ -3,4 +3,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  & .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .image {
+    color: transparent;
+    width: 100%;
+    height: auto;
+  }
 }

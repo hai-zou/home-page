@@ -32,23 +32,28 @@ const RandomImg = (props: { loadComplete: () => void }) => {
     .catch(console.error)
     .finally(() => {
       setIsLoading(false);
-      props.loadComplete();
     });
   };
 
   useEffect(() => getRandomImg(), []);
 
+  const handleImageLoad = () => {
+    props.loadComplete();
+  };
+
   return <div className={styles.container}>
-    {!isLoading ? <div className={styles.wrapper}>
-      <Image
-        src={imgData.imgurl}
-        width={imgData.width}
-        height={imgData.height}
-        layout='responsive'
-        alt='avatar'
-        className={styles.image}
-      />
-    </div>: <PingLoad />}
+    {!isLoading && imgData.imgurl ? (
+      <div className={styles.wrapper}>
+        <Image
+          src={imgData.imgurl}
+          width={imgData.width}
+          height={imgData.height}
+          alt='scenery'
+          className={styles.image}
+          onLoad={handleImageLoad}
+        />
+      </div>
+    ): <PingLoad />}
   </div>
 }
 
