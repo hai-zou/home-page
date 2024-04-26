@@ -2,6 +2,7 @@ import { QuoteIcon } from 'lucide-react';
 import style from './index.module.css';
 import { useEffect, useState } from 'react';
 import BouncyLoad from '@/components/loading/bouncy-load';
+import BASE_URL from '@/api-base-url';
 
 interface OneWordData {
   hitokoto: string;
@@ -20,7 +21,7 @@ const OneWord = (props: { loadComplete: () => void }) => {
     new Promise((resolve, reject) => {
       setTimeout(() => resolve(true), 1000);
     }).then(() => {
-      return fetch('https://v1.hitokoto.cn', { mode: 'cors' });
+      return fetch(`${BASE_URL.HITOKOTO_API}`);
     })
     .then(response => response.json())
     .then(data => {
