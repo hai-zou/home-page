@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import OneWord from '@/components/one-word';
 import UserInfo from "@/components/user-info";
 import dynamic from "next/dynamic";
+import TimeWeather from "@/components/card/time-weather";
 
 const PackeryLayout = dynamic(() => import('@/components/packery'), { ssr: false });
 const ForwardedRefPackery = forwardRef(function ForwardedRefPackery(props: { children: React.ReactNode; }, ref) {
@@ -42,7 +43,7 @@ export default function Home() {
       <div key='UserInfo' className='grid-item' style={{ width: '320px', height: '320px' }}>
         <UserInfo />
       </div>,
-      <div key='RandomImg' className='grid-item' style={{ width: '320px' }}>
+      <div key='RandomImg' className='grid-item' style={{ width: '320px', height: '200px' }}>
         <RandomImg loadComplete={() => resetPackeryLayout()} />
       </div>,
       <div key='Blog' className='grid-item' style={{ width: '210px' }}>
@@ -57,6 +58,9 @@ export default function Home() {
           </h2>
           <p>Personal Blog | Front-end technology sharing</p>
         </a>
+      </div>,
+      <div key='TimeWeather' className='grid-item' style={{ width: '320px', height: '150px' }}>
+        <TimeWeather />
       </div>,
     ];
     while (customList.length) {
