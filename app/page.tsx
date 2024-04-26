@@ -45,34 +45,19 @@ export default function Home() {
       <div key='RandomImg' className='grid-item' style={{ width: '320px' }}>
         <RandomImg loadComplete={() => resetPackeryLayout()} />
       </div>,
-      <div key='Templates' className='grid-item' style={{ width: '210px' }}>
+      <div key='Blog' className='grid-item' style={{ width: '210px' }}>
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://www.luckyzh.cn"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
-            Templates <span>-&gt;</span>
+            Blog <span>-&gt;</span>
           </h2>
-          <p>Explore starter templates for Next.js.</p>
+          <p>Personal Blog | Front-end technology sharing</p>
         </a>
       </div>,
-      <div key='Deploy' className='grid-item' style={{ width: '320px' }}>
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     ];
     while (customList.length) {
       const item = customList.shift();
