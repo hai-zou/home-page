@@ -42,17 +42,18 @@ const RandomImg = (props: { loadComplete: () => void }) => {
   };
 
   return <div className={styles.container}>
-    {!isLoading && imgData.imgurl ? (
-      <div className={styles.wrapper}>
-        <Image
+    {!isLoading ? (
+      <>
+        {imgData.imgurl ? <Image
           src={imgData.imgurl}
           width={imgData.width}
           height={imgData.height}
           alt='scenery'
+          priority={true}
           className={styles.image}
           onLoad={handleImageLoad}
-        />
-      </div>
+        /> : <>No Data</>}
+      </>
     ): <PingLoad />}
   </div>
 }
