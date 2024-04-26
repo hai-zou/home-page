@@ -1,5 +1,6 @@
 "use client"
 
+import RandomImg from "@/components/random-img";
 import styles from "./page.module.css";
 import OneWord from '@/components/one-word';
 import UserInfo from "@/components/user-info";
@@ -10,9 +11,9 @@ const PackeryLayout = dynamic(() => import('@/components/packery'), { ssr: false
 
 export default function Home() {
 
-  const [isReset, setIsReset] = useState(false);
+  const [resetNum, setResetNum] = useState(0);
   const oneWordLoaded = () => {
-    setIsReset(true);
+    setResetNum(resetNum + 1);
   };
 
   const createGridItem = (num: number) => {
@@ -34,6 +35,9 @@ export default function Home() {
       </div>,
       <div key='UserInfo' className='grid-item' style={{ width: '320px', height: '320px' }}>
         <UserInfo />
+      </div>,
+      <div key='RandomImg' className='grid-item' style={{ width: '320px' }}>
+        <RandomImg loadComplete={() => oneWordLoaded()} />
       </div>,
       <div key='Templates' className='grid-item' style={{ width: '210px' }}>
         <a
@@ -75,7 +79,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <PackeryLayout isReset={isReset}>
+      <PackeryLayout resetNum={resetNum}>
         {createAllGrid()}
       </PackeryLayout>
     </main>

@@ -5,10 +5,10 @@ import './index.css';
 
 const PackeryLayout = ({
   children,
-  isReset,
+  resetNum,
 }: Readonly<{
   children: React.ReactNode;
-  isReset: boolean;
+  resetNum: number;
 }>) => {
   const packeryRef = useRef(null);
   const [packeryInstance, setPackeryInstance] = useState<any>(null);
@@ -37,7 +37,7 @@ const PackeryLayout = ({
       return;
     }
     packeryInstance.layout();
-  }, [isReset, packeryInstance]);
+  }, [resetNum, packeryInstance]);
 
   return (
     <div ref={packeryRef} className="grid">
