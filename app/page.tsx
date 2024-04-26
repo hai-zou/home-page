@@ -1,12 +1,12 @@
 "use client"
 
 import { forwardRef, useRef } from "react";
-import RandomImg from "@/components/random-img";
 import styles from "./page.module.css";
-import OneWord from '@/components/one-word';
-import UserInfo from "@/components/user-info";
-import dynamic from "next/dynamic";
+import RandomImg from "@/components/card/random-img";
+import OneWord from '@/components/card/one-word';
+import UserInfo from "@/components/card/user-info";
 import TimeWeather from "@/components/card/time-weather";
+import dynamic from "next/dynamic";
 
 const PackeryLayout = dynamic(() => import('@/components/packery'), { ssr: false });
 const ForwardedRefPackery = forwardRef(function ForwardedRefPackery(props: { children: React.ReactNode; }, ref) {
