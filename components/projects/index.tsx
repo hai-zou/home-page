@@ -11,26 +11,26 @@ import { CodeXmlIcon } from "lucide-react";
 const Projects = () => {
   const projectList = [
     {
-      previewImg: '/images/travel-preview.png',
+      previewImg: '/images/no-image.png',
       name: 'Empty1',
       tags: [
         { name: 'HTML', color: '#E34C26' },
         { name: 'CSS', color: '#563D7C' },
         { name: 'JavaScript', color: '#F1E05A' },
       ],
-      describe: 'Nothing',
+      describe: 'Nothing, It is placeholder',
       codeUrl: '',
       demoUrl: '',
     },
     {
-      previewImg: '/images/travel-preview.png',
+      previewImg: '/images/no-image.png',
       name: 'Empty2',
       tags: [
         { name: 'HTML', color: '#E34C26' },
         { name: 'CSS', color: '#563D7C' },
         { name: 'JavaScript', color: '#F1E05A' },
       ],
-      describe: 'Nothing',
+      describe: 'Nothing, It is placeholder',
       codeUrl: '',
       demoUrl: '',
     },
@@ -58,14 +58,14 @@ const Projects = () => {
       demoUrl: 'https://travel-record.luckyzh.cn',
     },
     {
-      previewImg: '/images/travel-preview.png',
+      previewImg: '/images/no-image.png',
       name: 'Empty3',
       tags: [
         { name: 'HTML', color: '#E34C26' },
         { name: 'CSS', color: '#563D7C' },
         { name: 'JavaScript', color: '#F1E05A' },
       ],
-      describe: 'Nothing',
+      describe: 'Nothing, It is placeholder',
       codeUrl: '',
       demoUrl: '',
     },
