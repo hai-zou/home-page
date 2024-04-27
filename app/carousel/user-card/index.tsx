@@ -1,0 +1,72 @@
+import Image from 'next/image';
+import styles from './index.module.css';
+import { MailIcon, MapPinIcon } from 'lucide-react';
+import { GitHubIcon } from '@/components/icons/github-icon';
+import { JuejinIcon } from '@/components/icons/juejin-icon';
+
+export interface UserCardData {
+  type: 'user';
+  avatar: string;
+  name: string;
+  social: Array<{
+    name: string;
+    url: string;
+    isNewPage: boolean;
+  }>;
+  describe: string;
+}
+
+const UserCard = (props: { userData: UserCardData }) => {
+  const { userData } = props;
+
+  const getSocialIcon = (name: string) => {
+    const common = { width: 16, height: 16 };
+    switch (name) {
+      case 'Location':
+        return <MapPinIcon {...common} />;
+      case 'Email':
+        return <MailIcon {...common} />
+      case 'Github':
+        return <GitHubIcon {...common} />
+      case '掘金主页':
+        return <JuejinIcon {...common} />
+      default:
+        return <></>;
+    }
+  };
+
+  return <>
+    <div className={styles['user-card']}>
+      <Image
+        src={userData.avatar}
+        width={300}
+        height={300}
+        alt="blog-preview"
+        priority={true}
+      />
+      <div className={styles.info}>
+        <h3 className={styles.name}>
+          {userData.name}
+        </h3>
+        <div className={styles.describe}>
+          {userData.describe}
+        </div>
+        <div className={styles.social}>
+          {userData.social.map(social => (
+            <a
+              key={social.url}
+              className={styles.icon}
+              href={social.url}
+              title={social.name}
+              {...(social.isNewPage ? {target: "_blank"} : {})}
+            >
+              {getSocialIcon(social.name)}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </>
+};
+
+export default UserCard;

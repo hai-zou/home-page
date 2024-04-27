@@ -1,5 +1,6 @@
 .container {
   min-height: 80px;
+  width: 460px;
   display: flex;
   justify-content: center;
   align-items: center;

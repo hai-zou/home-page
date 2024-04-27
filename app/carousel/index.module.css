@@ -1,0 +1,19 @@
+.my-swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  & :global(.swiper-slide-shadow-coverflow) {
+    border-radius: 20px;
+  }
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 350px;
+  height: 540px;
+  padding: 16px;
+  border-radius: 20px;
+  background-color: #fff;
+}

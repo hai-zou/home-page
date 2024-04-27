@@ -2,6 +2,10 @@
   width: 100%;
   height: 100%;
   padding: 10px;
+  background-color: #F5EFE6;
   overflow-x: hidden;
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
