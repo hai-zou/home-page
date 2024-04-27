@@ -54,7 +54,7 @@ export const carouselList: Array<ProjectCardData | UserCardData> = [
         isNewPage: true,
       },
     ],
-    describe: 'Nothing, It is placeholder',
+    describe: 'Only by experiencing the hardest hardships can one rise above the ordinary.',
   },
   {
     type: 'project',
