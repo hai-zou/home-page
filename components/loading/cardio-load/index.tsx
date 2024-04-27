@@ -1,7 +1,7 @@
 import { cardio } from 'ldrs'
 import { useEffect } from 'react'
 
-const CardioLoad = () => {
+const CardioLoad = (props: JSX.IntrinsicElements['l-cardio']) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -13,8 +13,9 @@ const CardioLoad = () => {
     <l-cardio
       size="50"
       stroke="4"
-      speed="2" 
-      color="black" 
+      speed="2"
+      color="black"
+      {...props}
     ></l-cardio>
   </>
 }
