@@ -1,14 +1,9 @@
-import { forwardRef, useRef } from "react";
-import RandomImg from "@/components/card/random-img";
-import OneWord from '@/components/card/one-word';
-import UserInfo from "@/components/card/user-info";
-import TimeWeather from "@/components/card/time-weather";
-import dynamic from "next/dynamic";
-
-const PackeryLayout = dynamic(() => import('@/components/packery'), { ssr: false });
-const ForwardedRefPackery = forwardRef(function ForwardedRefPackery(props: { children: React.ReactNode; }, ref) {
-  return <PackeryLayout forwardedRef={ref}>{props.children}</PackeryLayout>
-});
+import { useRef } from "react";
+import RandomImg from "./random-img";
+import OneWord from './one-word';
+import UserInfo from "./user-info";
+import TimeWeather from "./time-weather";
+import ForwardedRefPackery from "@/components/packery/packery-ref";
 
 const Block = () => {
   const packeryLayoutRef = useRef<any>(null);

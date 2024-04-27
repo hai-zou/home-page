@@ -1,8 +1,8 @@
 "use client"
 
-import Block from "@/components/block";
 import styles from "./page.module.css";
-import Projects from "@/components/projects";
+import Projects from "./projects";
+import Block from "./block";
 
 export default function Home() {
   return (
