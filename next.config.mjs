@@ -2,9 +2,19 @@
 const nextConfig = {
   reactStrictMode: process.env.NODE_ENV === 'production',
   images: {
-    domains: [
-      'image.luckyzh.cn',
-      'i.33xp.cn',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'image.luckyzh.cn',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.33xp.cn',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   rewrites: async () => {
