@@ -3,20 +3,28 @@ import { ProjectCardData } from "./project-card";
 import { UserCardData } from "./user-card";
 import { GitHubIcon } from "@/components/icons/github-icon";
 import { JuejinIcon } from "@/components/icons/juejin-icon";
+import ClockCard from "./clock-card";
 
-export const carouselList: Array<ProjectCardData | UserCardData> = [
+interface CustomCard {
+  type: 'custom';
+  name: string;
+  children: React.ReactNode;
+}
+
+type AllCard = ProjectCardData | UserCardData | CustomCard;
+
+export const carouselList: Array<AllCard> = [
   {
     type: 'project',
-    previewImg: '/images/no-image.png',
-    name: 'Empty2',
+    previewImg: '/images/travel-preview.png',
+    name: 'Travel Record',
     tags: [
-      { name: 'HTML', color: '#E34C26' },
-      { name: 'CSS', color: '#563D7C' },
       { name: 'JavaScript', color: '#F1E05A' },
+      { name: 'HTML', color: '#E34C26' },
     ],
-    describe: 'Nothing, It is placeholder',
-    codeUrl: '',
-    demoUrl: '',
+    describe: '🌍 记录每一个到过的地方！',
+    codeUrl: 'https://github.com/hai-zou/travel-record',
+    demoUrl: 'https://travel-record.luckyzh.cn',
   },
   {
     type: 'project',
@@ -65,20 +73,8 @@ export const carouselList: Array<ProjectCardData | UserCardData> = [
   },
   {
     type: 'project',
-    previewImg: '/images/travel-preview.png',
-    name: 'Travel Record',
-    tags: [
-      { name: 'JavaScript', color: '#F1E05A' },
-      { name: 'HTML', color: '#E34C26' },
-    ],
-    describe: '🌍 记录每一个到过的地方！',
-    codeUrl: 'https://github.com/hai-zou/travel-record',
-    demoUrl: 'https://travel-record.luckyzh.cn',
-  },
-  {
-    type: 'project',
     previewImg: '/images/no-image.png',
-    name: 'Empty3',
+    name: 'Empty',
     tags: [
       { name: 'HTML', color: '#E34C26' },
       { name: 'CSS', color: '#563D7C' },
@@ -87,5 +83,10 @@ export const carouselList: Array<ProjectCardData | UserCardData> = [
     describe: 'Nothing, It is placeholder',
     codeUrl: '',
     demoUrl: '',
+  },
+  {
+    type: 'custom',
+    name: 'clock',
+    children: <ClockCard />,
   },
 ];

@@ -33,11 +33,11 @@ const Carousel = () => {
           {
             item.type === 'project' ? <ProjectCard projectData={item} /> :
             item.type === 'user' ? <UserCard userData={item} /> :
+            item.type === 'custom' ? item.children :
             <></>
           }
         </SwiperSlide>
       ))}
-      
     </Swiper>
   );
 };
