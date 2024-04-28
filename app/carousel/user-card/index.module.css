@@ -33,8 +33,7 @@
     }
 
     & .icon {
-      width: 32px;
-      height: 32px;
+      padding: 6px;
       border: 1px solid #eee;
       border-radius: 4px;
       display: inline-flex;

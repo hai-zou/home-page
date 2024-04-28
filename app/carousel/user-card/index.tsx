@@ -11,29 +11,14 @@ export interface UserCardData {
   social: Array<{
     name: string;
     url: string;
-    isNewPage: boolean;
+    icon: React.ReactNode,
+    openNewPage: boolean;
   }>;
   describe: string;
 }
 
 const UserCard = (props: { userData: UserCardData }) => {
   const { userData } = props;
-
-  const getSocialIcon = (name: string) => {
-    const common = { width: 16, height: 16 };
-    switch (name) {
-      case 'Location':
-        return <MapPinIcon {...common} />;
-      case 'Email':
-        return <MailIcon {...common} />
-      case 'Github':
-        return <GitHubIcon {...common} />
-      case '掘金主页':
-        return <JuejinIcon {...common} />
-      default:
-        return <></>;
-    }
-  };
 
   return <>
     <div className={styles['user-card']}>
@@ -58,9 +43,9 @@ const UserCard = (props: { userData: UserCardData }) => {
               className={styles.icon}
               href={social.url}
               title={social.name}
-              {...(social.isNewPage ? {target: "_blank"} : {})}
+              {...(social.openNewPage ? {target: "_blank"} : {})}
             >
-              {getSocialIcon(social.name)}
+              {social.icon}
             </a>
           ))}
         </div>
