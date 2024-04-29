@@ -1,4 +1,5 @@
 import { MailIcon, MapPinIcon } from "lucide-react";
+import { nanoid } from 'nanoid'
 import { ProjectCardData } from "./project-card";
 import { UserCardData } from "./user-card";
 import { GitHubIcon } from "@/components/icons/github-icon";
@@ -7,6 +8,7 @@ import ClockCard from "./clock-card";
 import MoodCard from "./mood-card";
 
 interface CustomCard {
+  id: string;
   type: 'custom';
   name: string;
   children: React.ReactNode;
@@ -16,6 +18,7 @@ type AllCard = ProjectCardData | UserCardData | CustomCard;
 
 export const carouselList: Array<AllCard> = [
   {
+    id: nanoid(),
     type: 'project',
     previewImg: '/images/no-image.png',
     name: 'Empty',
@@ -29,6 +32,7 @@ export const carouselList: Array<AllCard> = [
     demoUrl: '',
   },
   {
+    id: nanoid(),
     type: 'project',
     previewImg: '/images/travel-preview.png',
     name: 'Travel Record',
@@ -41,6 +45,7 @@ export const carouselList: Array<AllCard> = [
     demoUrl: 'https://travel-record.luckyzh.cn',
   },
   {
+    id: nanoid(),
     type: 'project',
     previewImg: '/images/blog-preview.png',
     name: 'Hexo Blog',
@@ -54,6 +59,7 @@ export const carouselList: Array<AllCard> = [
     demoUrl: 'https://www.luckyzh.cn',
   },
   {
+    id: nanoid(),
     type: 'user',
     avatar: 'https://image.luckyzh.cn/user/avatar.jpg',
     name: 'A Mortal',
@@ -86,11 +92,13 @@ export const carouselList: Array<AllCard> = [
     describe: 'Only by experiencing the hardest hardships can one rise above the ordinary.',
   },
   {
+    id: nanoid(),
     type: 'custom',
     name: 'clock',
     children: <ClockCard />,
   },
   {
+    id: nanoid(),
     type: 'custom',
     name: 'mood',
     children: <MoodCard />,

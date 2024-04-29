@@ -1,10 +1,8 @@
 import Image from 'next/image';
 import styles from './index.module.css';
-import { MailIcon, MapPinIcon } from 'lucide-react';
-import { GitHubIcon } from '@/components/icons/github-icon';
-import { JuejinIcon } from '@/components/icons/juejin-icon';
 
 export interface UserCardData {
+  id: string;
   type: 'user';
   avatar: string;
   name: string;

@@ -3,6 +3,7 @@ import styles from './index.module.css';
 import { CodeXmlIcon } from 'lucide-react';
 
 export interface ProjectCardData {
+  id: string;
   type: 'project';
   previewImg: string;
   name: string;

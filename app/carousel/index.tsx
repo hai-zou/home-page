@@ -29,7 +29,7 @@ const Carousel = () => {
       initialSlide={Math.ceil(carouselList.length / 2) - 1}
     >
       {carouselList.map(item => (
-        <SwiperSlide key={item.name} className={styles['swiper-slide']}>
+        <SwiperSlide key={item.id} className={styles['swiper-slide']}>
           {
             item.type === 'project' ? <ProjectCard projectData={item} /> :
             item.type === 'user' ? <UserCard userData={item} /> :
