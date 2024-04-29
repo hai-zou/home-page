@@ -3,9 +3,11 @@
   height: 100%;
   border-radius: 10px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: #091921;
+  position: relative;
 
   --clock-width: 250px;
   --center-dot: 15px;
@@ -124,48 +126,22 @@
 
 .toggle {
   position: absolute;
-  top: 30px;
-  right: 150px;
-  width: 20px;
-  height: 20px;
-  font-size: 18px;
-  border-radius: 50%;
-  background: #d1dae3;
-  color: #d1dae3;
-  font-family: consolas;
+  bottom: 15px;
+  right: 15px;
   cursor: pointer;
-  left: 25px;
-  white-space: nowrap;
 }
 
-.toggleClass {
-  position: absolute;
-  top: 30px;
-  right: 150px;
-  width: 20px;
-  height: 20px;
-  font-size: 18px;
-  border-radius: 50%;
-  background: #d1dae3;
-  color: #d1dae3;
-  font-family: concolas;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+.sun {
+  display: none;
 }
-
-.toggleClass:before {
-  position: absolute;
-  left: 25px;
-  content: "Light Mode";
-  white-space: nowrap;
+.moon {
+  display: block;
+  color: #fff;
 }
-
-.wrapper.light .toggleClass {
-  background: #091921;
-  color: #091921;
+.wrapper.light .moon {
+  display: none;
 }
-
-.wrapper.light .toggleClass:before {
-  content: "Dark Mode";
+.wrapper.light .sun {
+  display: block;
+  color: #000;
 }

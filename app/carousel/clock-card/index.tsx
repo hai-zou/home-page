@@ -1,11 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './index.module.css';
+import { MoonIcon, SunIcon } from 'lucide-react';
+
+type ThemeMode = 'light' | 'dark';
 
 const ClockCard = () => {
 
   const hr = useRef<HTMLDivElement | null>(null);
   const mn = useRef<HTMLDivElement | null>(null);
   const sc = useRef<HTMLDivElement | null>(null);
+
+  const [cardTheme, setCardTheme] = useState<ThemeMode>('light');
 
   useEffect(() => {
     const deg = 6;
@@ -28,7 +33,7 @@ const ClockCard = () => {
   }, []);
 
   return (
-    <div className={`${styles.wrapper} ${styles.light}`}>
+    <div className={`${styles.wrapper} ${styles[cardTheme]}`}>
       <div className={styles.clock}>
         <div className={styles.hour}>
           <div className={styles.hr} ref={hr}></div>
@@ -39,6 +44,16 @@ const ClockCard = () => {
         <div className={styles.sec}>
           <div className={styles.sc} ref={sc}></div>
         </div>
+      </div>
+      <div className={styles.toggle}>
+        <SunIcon
+          className={styles.sun}
+          onClick={() => setCardTheme('dark')}
+        />
+        <MoonIcon
+          className={styles.moon}
+          onClick={() => setCardTheme('light')}
+        />
       </div>
     </div>
   )

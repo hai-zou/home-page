@@ -94,13 +94,13 @@ export const carouselList: Array<AllCard> = [
   {
     id: nanoid(),
     type: 'custom',
-    name: 'clock',
-    children: <ClockCard />,
+    name: 'mood',
+    children: <MoodCard />,
   },
   {
     id: nanoid(),
     type: 'custom',
-    name: 'mood',
-    children: <MoodCard />,
+    name: 'clock',
+    children: <ClockCard />,
   },
 ];
