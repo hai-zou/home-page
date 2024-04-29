@@ -36,9 +36,3 @@ a {
   background-color: transparent;
   border-radius: 3px;
 }
-
-@font-face {
-  font-family: "UnidreamLED";
-  font-display: swap;
-  src: url("/font/UnidreamLED.ttf") format("truetype");
-}

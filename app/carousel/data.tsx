@@ -4,6 +4,7 @@ import { UserCardData } from "./user-card";
 import { GitHubIcon } from "@/components/icons/github-icon";
 import { JuejinIcon } from "@/components/icons/juejin-icon";
 import ClockCard from "./clock-card";
+import MoodCard from "./mood-card";
 
 interface CustomCard {
   type: 'custom';
@@ -14,6 +15,19 @@ interface CustomCard {
 type AllCard = ProjectCardData | UserCardData | CustomCard;
 
 export const carouselList: Array<AllCard> = [
+  {
+    type: 'project',
+    previewImg: '/images/no-image.png',
+    name: 'Empty',
+    tags: [
+      { name: 'HTML', color: '#E34C26' },
+      { name: 'CSS', color: '#563D7C' },
+      { name: 'JavaScript', color: '#F1E05A' },
+    ],
+    describe: 'Nothing, It is placeholder',
+    codeUrl: '',
+    demoUrl: '',
+  },
   {
     type: 'project',
     previewImg: '/images/travel-preview.png',
@@ -72,21 +86,13 @@ export const carouselList: Array<AllCard> = [
     describe: 'Only by experiencing the hardest hardships can one rise above the ordinary.',
   },
   {
-    type: 'project',
-    previewImg: '/images/no-image.png',
-    name: 'Empty',
-    tags: [
-      { name: 'HTML', color: '#E34C26' },
-      { name: 'CSS', color: '#563D7C' },
-      { name: 'JavaScript', color: '#F1E05A' },
-    ],
-    describe: 'Nothing, It is placeholder',
-    codeUrl: '',
-    demoUrl: '',
-  },
-  {
     type: 'custom',
     name: 'clock',
     children: <ClockCard />,
+  },
+  {
+    type: 'custom',
+    name: 'mood',
+    children: <MoodCard />,
   },
 ];
