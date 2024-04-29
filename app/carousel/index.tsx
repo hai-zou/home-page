@@ -10,6 +10,16 @@ import UserCard from "./user-card";
 import { carouselList } from "./data";
 
 const Carousel = () => {
+
+  // 指定初始化展示的卡片
+  const getInitCard = () => {
+    const findIndex = carouselList.findIndex(item => item.name === 'A Mortal');
+    if (findIndex === -1) {
+      return Math.ceil(carouselList.length / 2) - 1;
+    }
+    return findIndex;
+  };
+
   return (
     <Swiper
       modules={[EffectCoverflow, Pagination]}
@@ -26,7 +36,7 @@ const Carousel = () => {
       }}
       pagination={true}
       className={styles['my-swiper']}
-      initialSlide={Math.ceil(carouselList.length / 2) - 1}
+      initialSlide={getInitCard()}
     >
       {carouselList.map(item => (
         <SwiperSlide key={item.id} className={styles['swiper-slide']}>
