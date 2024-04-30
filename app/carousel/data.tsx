@@ -34,6 +34,21 @@ export const carouselList: Array<AllCard> = [
   {
     id: nanoid(),
     type: 'project',
+    previewImg: '/images/barrage-preview.png',
+    name: 'Web Barrage',
+    tags: [
+      { name: 'TypeScript', color: '#3178C6' },
+      { name: 'JavaScript', color: '#F1E05A' },
+      { name: 'HTML', color: '#E34C26' },
+      { name: 'CSS', color: '#563D7C' },
+    ],
+    describe: '🎉 Web 端弹幕组件',
+    codeUrl: 'https://github.com/hai-zou/web-barrage',
+    demoUrl: 'https://hai-zou.github.io/web-barrage/',
+  },
+  {
+    id: nanoid(),
+    type: 'project',
     previewImg: '/images/travel-preview.png',
     name: 'Travel Record',
     tags: [
