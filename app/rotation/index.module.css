@@ -1,0 +1,37 @@
+#perspective {
+  /* 景深 */
+  perspective: 800px;
+}
+
+.center-axis {
+  transform-style: preserve-3d;
+}
+
+.wrap {
+  width: 350px;
+  height: 540px;
+  position: relative;
+  /* 设置3D场景 */
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg) translateZ(0deg);
+  background-color: #fff;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  transform: rotateX(0deg) rotateY(0deg);
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  border-radius: 20px;
+  user-select: none;
+  background-position: center;
+  background-size: cover;
+
+  & img,
+  & a {
+    -webkit-user-drag: none;
+  }
+}
