@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { EffectCoverflow, Pagination, EffectCreative } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -8,6 +8,7 @@ import styles from './index.module.css';
 import ProjectCard from "./project-card";
 import UserCard from "./user-card";
 import { carouselList } from "./data";
+import { SwiperOptions } from "swiper/types";
 
 const Carousel = () => {
 
@@ -20,23 +21,49 @@ const Carousel = () => {
     return findIndex;
   };
 
+  const commonProps: SwiperOptions = {
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    pagination: {
+      type: 'fraction',
+    },
+    initialSlide: getInitCard(),
+    modules: [Pagination],
+  };
+
+  const creativeProps: SwiperOptions = {
+    modules: [...commonProps.modules || [], EffectCreative],
+    effect: 'creative',
+    creativeEffect: {
+      limitProgress: 3,
+      prev: {
+        translate: ["-120%", 0, -500],
+      },
+      next: {
+        translate: ["120%", 0, -500],
+      },
+    },
+  };
+
+  const coverflowProps: SwiperOptions = {
+    modules: [...commonProps.modules || [], EffectCoverflow],
+    effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+  };
+
   return (
     <Swiper
-      modules={[EffectCoverflow, Pagination]}
-      effect="coverflow"
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView="auto"
-      coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      }}
-      pagination={true}
       className={styles['my-swiper']}
-      initialSlide={getInitCard()}
+      {...commonProps}
+      {...coverflowProps}
     >
       {carouselList.map(item => (
         <SwiperSlide key={item.id} className={styles['swiper-slide']}>
