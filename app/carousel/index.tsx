@@ -5,10 +5,9 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import styles from './index.module.css';
-import ProjectCard from "./project-card";
-import UserCard from "./user-card";
-import { carouselList } from "./data";
+import { carouselList } from "@/app/data";
 import { SwiperOptions } from "swiper/types";
+import CardItem from "@/app/cards";
 
 const Carousel = () => {
 
@@ -33,6 +32,7 @@ const Carousel = () => {
     modules: [Pagination],
   };
 
+  // 自定义缩放特效
   const creativeProps: SwiperOptions = {
     modules: [...commonProps.modules || [], EffectCreative],
     effect: 'creative',
@@ -47,6 +47,7 @@ const Carousel = () => {
     },
   };
 
+  // 滚动特效
   const coverflowProps: SwiperOptions = {
     modules: [...commonProps.modules || [], EffectCoverflow],
     effect: 'coverflow',
@@ -67,12 +68,7 @@ const Carousel = () => {
     >
       {carouselList.map(item => (
         <SwiperSlide key={item.id} className={styles['swiper-slide']}>
-          {
-            item.type === 'project' ? <ProjectCard projectData={item} /> :
-            item.type === 'user' ? <UserCard userData={item} /> :
-            item.type === 'custom' ? item.children :
-            <></>
-          }
+          <CardItem cardItem={item} />
         </SwiperSlide>
       ))}
     </Swiper>

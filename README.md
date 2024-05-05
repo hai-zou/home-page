@@ -37,4 +37,4 @@
    pnpm dev
    ```
 
-5. Open the [Config file](./app/carousel/data.tsx) and make changes
+5. Open the [Config file](./app/data.tsx) and make changes

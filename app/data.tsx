@@ -1,20 +1,10 @@
 import { MailIcon, MapPinIcon } from "lucide-react";
 import { nanoid } from 'nanoid'
-import { ProjectCardData } from "./project-card";
-import { UserCardData } from "./user-card";
 import { GitHubIcon } from "@/components/icons/github-icon";
 import { JuejinIcon } from "@/components/icons/juejin-icon";
-import ClockCard from "./clock-card";
-import MoodCard from "./mood-card";
-
-interface CustomCard {
-  id: string;
-  type: 'custom';
-  name: string;
-  children: React.ReactNode;
-}
-
-type AllCard = ProjectCardData | UserCardData | CustomCard;
+import { AllCard } from "@/app/cards";
+import ClockCard from "@/app/cards/clock";
+import MoodCard from "@/app/cards/mood";
 
 export const carouselList: Array<AllCard> = [
   {

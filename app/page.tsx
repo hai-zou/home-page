@@ -21,6 +21,7 @@ export default function Home() {
     <>
       <LoadingPage isLoading={isPageLoading} />
       <main className={styles.main}>
+        {/* TODO 动效切换 */}
         <Carousel />
       </main>
     </>

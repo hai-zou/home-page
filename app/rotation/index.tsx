@@ -1,7 +1,6 @@
 import { useRef } from 'react';
-import { carouselList } from '../carousel/data';
-import ProjectCard from '../carousel/project-card';
-import UserCard from '../carousel/user-card';
+import { carouselList } from '@/app/data';
+import CardItem from '@/app/cards';
 import styles from './index.module.css';
 import useMouseMove from './mouse-move';
 
@@ -38,12 +37,7 @@ const Rotation = () => {
               className={styles['card']}
               style={getCardStyle(index)}
             >
-              {
-                item.type === 'project' ? <ProjectCard projectData={item} /> :
-                item.type === 'user' ? <UserCard userData={item} /> :
-                item.type === 'custom' ? item.children :
-                <></>
-              }
+              <CardItem cardItem={item} />
             </div>
           ))}
         </div>
