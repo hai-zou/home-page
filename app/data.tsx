@@ -6,7 +6,7 @@ import { AllCard } from "@/app/cards";
 import ClockCard from "@/app/cards/clock";
 import MoodCard from "@/app/cards/mood";
 
-export const carouselList: Array<AllCard> = [
+export const displayList: Array<AllCard> = [
   {
     id: nanoid(),
     type: 'project',

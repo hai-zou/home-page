@@ -5,7 +5,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import styles from './index.module.css';
-import { carouselList } from "@/app/data";
+import { displayList } from "@/app/data";
 import { SwiperOptions } from "swiper/types";
 import CardItem from "@/app/cards";
 
@@ -15,9 +15,9 @@ const Carousel = (props: { animateType: SwiperAnimateType }) => {
 
   // 指定初始化展示的卡片
   const getInitCard = () => {
-    const findIndex = carouselList.findIndex(item => item.name === 'A Mortal');
+    const findIndex = displayList.findIndex(item => item.name === 'A Mortal');
     if (findIndex === -1) {
-      return Math.ceil(carouselList.length / 2) - 1;
+      return Math.ceil(displayList.length / 2) - 1;
     }
     return findIndex;
   };
@@ -79,7 +79,7 @@ const Carousel = (props: { animateType: SwiperAnimateType }) => {
       {...commonProps}
       {...getAnimateProps()}
     >
-      {carouselList.map(item => (
+      {displayList.map(item => (
         <SwiperSlide key={item.id} className={styles['swiper-slide']}>
           <CardItem cardItem={item} />
         </SwiperSlide>
