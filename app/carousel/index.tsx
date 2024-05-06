@@ -9,7 +9,9 @@ import { carouselList } from "@/app/data";
 import { SwiperOptions } from "swiper/types";
 import CardItem from "@/app/cards";
 
-const Carousel = () => {
+export type SwiperAnimateType = 'swiper-coverflow' | 'swiper-creative' | 'swiper-tiled';
+
+const Carousel = (props: { animateType: SwiperAnimateType }) => {
 
   // 指定初始化展示的卡片
   const getInitCard = () => {
@@ -60,11 +62,22 @@ const Carousel = () => {
     },
   };
 
+  const getAnimateProps = () => {
+    switch (props.animateType) {
+      case 'swiper-coverflow':
+        return coverflowProps;
+      case 'swiper-creative':
+        return creativeProps;
+      default:
+        return {};
+    }
+  };
+
   return (
     <Swiper
       className={styles['my-swiper']}
       {...commonProps}
-      {...coverflowProps}
+      {...getAnimateProps()}
     >
       {carouselList.map(item => (
         <SwiperSlide key={item.id} className={styles['swiper-slide']}>

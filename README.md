@@ -1,11 +1,23 @@
 # Home Page | 个人主页
 
-![home-page-preview](/public/home-page-preview.png)
+| ![swiper-coverflow](/public/swiper-coverflow.png) | ![swiper-creative](/public/swiper-creative.png) |
+| - | - |
+| Swiper Coverflow | Swiper Creative |
+| ![swiper-tiled](/public/swiper-tiled.png) | ![custom-rotate](/public/custom-rotate.png) |
+| Swiper Tiled | Custom Rotate |
 
 ## Features
 
-- Swiper Carousel
-- Supports configuration of user cards and project cards
+Animation Effect
+- Swiper Coverflow
+- Swiper Creative
+- Swiper Tiled
+- Custom Rotate
+
+Card Type
+- User Card
+- Project Card
+- Custom Card
 
 ## Deploy with Vercel
 
