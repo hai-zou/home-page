@@ -3,6 +3,14 @@ import { displayList } from '@/app/data';
 import CardItem from '@/app/cards';
 import styles from './index.module.css';
 import useMouseMove from './mouse-move';
+import useTouchMove from './touch-move';
+
+const isMobileDevice = () => {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+  return (typeof window.ontouchstart !== 'undefined');
+}
 
 const Rotation = () => {
 
@@ -22,7 +30,8 @@ const Rotation = () => {
     };
   };
 
-  useMouseMove((angle) => {
+  const useMove = isMobileDevice() ? useTouchMove : useMouseMove;
+  useMove((angle) => {
     if (!wrapRef.current) return;
     wrapRef.current.style.transform = `rotateY(${angle}deg)`;
   });
