@@ -10,20 +10,6 @@ export const displayList: Array<AllCard> = [
   {
     id: nanoid(),
     type: 'project',
-    previewImg: '/images/no-image.png',
-    name: 'Empty',
-    tags: [
-      { name: 'HTML', color: '#E34C26' },
-      { name: 'CSS', color: '#563D7C' },
-      { name: 'JavaScript', color: '#F1E05A' },
-    ],
-    describe: 'Nothing, It is placeholder',
-    codeUrl: '',
-    demoUrl: '',
-  },
-  {
-    id: nanoid(),
-    type: 'project',
     previewImg: '/images/barrage-preview.png',
     name: 'Web Barrage',
     tags: [
