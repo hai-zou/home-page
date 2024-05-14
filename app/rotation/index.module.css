@@ -14,7 +14,6 @@
   /* 设置3D场景 */
   transform-style: preserve-3d;
   transform: rotateX(0deg) rotateY(0deg) translateZ(0deg);
-  background-color: #fff;
 }
 
 .card {
