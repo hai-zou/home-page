@@ -15,7 +15,7 @@ const Carousel = (props: { animateType: SwiperAnimateType }) => {
 
   // 指定初始化展示的卡片
   const getInitCard = () => {
-    const findIndex = displayList.findIndex(item => item.name === 'A Mortal');
+    const findIndex = displayList.findIndex(item => item.type === 'user');
     if (findIndex === -1) {
       return Math.ceil(displayList.length / 2) - 1;
     }
