@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'image.luckyzh.cn',
+        hostname: 'imgs.izou.top',
         port: '',
         pathname: '/**',
       },

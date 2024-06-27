@@ -30,6 +30,7 @@ const Carousel = (props: { animateType: SwiperAnimateType }) => {
     pagination: {
       type: 'fraction',
     },
+    loop: true,
     initialSlide: getInitCard(),
     modules: [Pagination],
   };

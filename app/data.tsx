@@ -1,58 +1,14 @@
-import { MailIcon, MapPinIcon } from "lucide-react";
+import { MailIcon, MapPinIcon, LinkIcon } from "lucide-react";
 import { nanoid } from 'nanoid'
 import { GitHubIcon } from "@/components/icons/github-icon";
 import { JuejinIcon } from "@/components/icons/juejin-icon";
 import { AllCard } from "@/app/cards";
-import ClockCard from "@/app/cards/clock";
-import MoodCard from "@/app/cards/mood";
 
 export const displayList: Array<AllCard> = [
   {
     id: nanoid(),
-    type: 'project',
-    previewImg: '/images/barrage-preview.png',
-    name: 'Web Barrage',
-    tags: [
-      { name: 'TypeScript', color: '#3178C6' },
-      { name: 'JavaScript', color: '#F1E05A' },
-      { name: 'HTML', color: '#E34C26' },
-      { name: 'CSS', color: '#563D7C' },
-    ],
-    describe: '🎉 Web 端弹幕组件',
-    codeUrl: 'https://github.com/hai-zou/web-barrage',
-    demoUrl: 'https://hai-zou.github.io/web-barrage/',
-  },
-  {
-    id: nanoid(),
-    type: 'project',
-    previewImg: '/images/travel-preview.png',
-    name: 'Travel Record',
-    tags: [
-      { name: 'JavaScript', color: '#F1E05A' },
-      { name: 'HTML', color: '#E34C26' },
-    ],
-    describe: '🌍 记录每一个到过的地方！',
-    codeUrl: 'https://github.com/hai-zou/travel-record',
-    demoUrl: 'https://travel-record.luckyzh.cn',
-  },
-  {
-    id: nanoid(),
-    type: 'project',
-    previewImg: '/images/blog-preview.png',
-    name: 'Hexo Blog',
-    tags: [
-      { name: 'JavaScript', color: '#F1E05A' },
-      { name: 'CSS', color: '#563D7C' },
-      { name: 'Nunjucks', color: '#3D8137' },
-    ],
-    describe: 'Personal Blog 📝 | Front-end technology sharing',
-    codeUrl: 'https://github.com/hai-zou/hexo-blog',
-    demoUrl: 'https://www.luckyzh.cn',
-  },
-  {
-    id: nanoid(),
     type: 'user',
-    avatar: 'https://image.luckyzh.cn/user/avatar.jpg',
+    avatar: 'https://imgs.izou.top/user/avatar.jpg',
     name: 'A Mortal',
     social: [
       {
@@ -74,6 +30,12 @@ export const displayList: Array<AllCard> = [
         openNewPage: true,
       },
       {
+        name: 'Blog',
+        url: 'https://blog.izou.top',
+        icon: <LinkIcon width={16} height={16} />,
+        openNewPage: true,
+      },
+      {
         name: '掘金主页',
         url: 'https://juejin.cn/user/202789929622183/posts',
         icon: <JuejinIcon width={16} height={16} />,
@@ -84,14 +46,44 @@ export const displayList: Array<AllCard> = [
   },
   {
     id: nanoid(),
-    type: 'custom',
-    name: 'mood',
-    children: <MoodCard />,
+    type: 'project',
+    previewImg: '/images/hexo-theme.png',
+    name: 'Hexo Theme Sea',
+    tags: [
+      { name: 'JavaScript', color: '#F1E05A' },
+      { name: 'CSS', color: '#563D7C' },
+      { name: 'Nunjucks', color: '#3D8137' },
+    ],
+    describe: '📝 Hexo Theme | Blog Theme',
+    codeUrl: 'https://github.com/hai-zou/hexo-theme-sea',
+    demoUrl: 'https://hai-zou.github.io/hexo-theme-sea',
   },
   {
     id: nanoid(),
-    type: 'custom',
-    name: 'clock',
-    children: <ClockCard />,
+    type: 'project',
+    previewImg: '/images/barrage-preview.png',
+    name: 'Web Barrage',
+    tags: [
+      { name: 'TypeScript', color: '#3178C6' },
+      { name: 'JavaScript', color: '#F1E05A' },
+      { name: 'HTML', color: '#E34C26' },
+      { name: 'CSS', color: '#563D7C' },
+    ],
+    describe: '🎉 Web 端弹幕组件',
+    codeUrl: 'https://github.com/hai-zou/web-barrage',
+    demoUrl: 'https://hai-zou.github.io/web-barrage',
+  },
+  {
+    id: nanoid(),
+    type: 'project',
+    previewImg: '/images/travel-preview.png',
+    name: 'Travel Record',
+    tags: [
+      { name: 'JavaScript', color: '#F1E05A' },
+      { name: 'HTML', color: '#E34C26' },
+    ],
+    describe: '🌍 记录每一个到过的地方！',
+    codeUrl: '',
+    demoUrl: 'https://travel.izou.top',
   },
 ];
